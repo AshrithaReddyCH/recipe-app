@@ -1,38 +1,254 @@
-.App {
+.container {
+  font-family: Arial, sans-serif;
   text-align: center;
+  padding-top: 80px; 
+  margin: 0;
+  background-color: #f8f9fa;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #000;
+  color: white;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Left side: logo + tagline */
+.navbar-left {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 1rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Right side: navigation links aligned to right */
+.navbar-right {
+  display: flex;
+  gap: 20px; /* spacing between links */
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #1b7532;
+}
+
+/* Recipe Box with bg image */
+.recipe-box {
+  background-image: url("https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 20px;  
+  display: flex;
+  flex-direction: column;   
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 80px 20px;
+  border-radius: 10px;
   color: white;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
 }
 
-.App-link {
-  color: #61dafb;
+
+.recipe-box h1 {
+  font-size: 2.8rem;
+  margin-bottom: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Search */
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
+
+.search-box input {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  width: 280px;
+}
+
+.search-box button {
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #000;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: #1b7532;
+}
+
+/* Error */
+.error {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.section-heading {
+  font-size: 2rem;
+  margin: 40px auto 10px; 
+  padding-left: 20px;     
+  padding-right: 20px;  
+  text-align: left;        
+  max-width: 90%;          
+  color: #333;
+}
+
+
+.cards-container hr {
+  border: none;
+  height: 2px;
+  background: #ddd;
+  margin: 0 auto 25px;
+  max-width: 90%;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 60px; 
+  margin: 30px auto; 
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.sample-card::before {
+  content: "";
+  position: absolute;
+  inset: 0; 
+  background-color: rgba(0, 0, 0, 0.28);
+  pointer-events: none; 
+  border-radius: 12px;
+}
+
+.sample-card {
+  width: 100%;       
+  height: 220px; 
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0;     
+ 
+}
+
+
+.sample-card h3 {
+  z-index: 2;
+  width: 100%;
+  background: none;   
+  color: white;
+  margin: 0;
+  padding: 4px;        
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7); 
+  position: absolute;  
+  bottom: 0;      
+  font-family: 'Poppins', sans-serif; 
+  font-weight: bold;       
+}
+
+/* Italian */
+.card1 { background-image: url("https://i.pinimg.com/1200x/76/27/e9/7627e9ccac872d4871a9d6a108c5115f.jpg"); }
+.card2 { background-image: url("https://i.pinimg.com/736x/0f/2a/87/0f2a87cd1a23dd8443c404c893aefda6.jpg");}
+.card3 { background-image: url("https://i.pinimg.com/736x/b7/32/84/b732847d2b6dba5ec3f7a43199704574.jpg"); }
+.card4 { background-image: url("https://i.pinimg.com/736x/a8/f6/8b/a8f68b631ef168dc8cd3cb971dcd74eb.jpg"); }
+.card5 { background-image: url("https://i.pinimg.com/736x/cd/df/e6/cddfe6414db0b5ac748e5d45f1252aab.jpg"); }
+.card6 { background-image: url("https://i.pinimg.com/736x/0e/c2/89/0ec289492947872976c5c52215280faa.jpg"); }
+
+/* South Indian */
+.card7 { background-image: url("https://i.pinimg.com/736x/6e/10/c7/6e10c7c0c11d6e2a28d6c51c3877774a.jpg"); }
+.card8 { background-image: url("https://i.pinimg.com/736x/06/d3/0d/06d30da0f40806b6cd07b51cb16fdf0d.jpg"); }
+.card9 { background-image: url("https://i.pinimg.com/1200x/a8/2c/0d/a82c0dd88f2a7bc31bf73b03ff5f2190.jpg"); }
+.card10 { background-image: url("https://i.pinimg.com/736x/34/a2/8c/34a28cbd784e4284d18c456a1aa43c27.jpg"); }
+.card11 { background-image: url("https://i.pinimg.com/1200x/00/d4/85/00d48595bec455a80aa0b1d51666b96d.jpg"); }
+.card12 { background-image: url("https://i.pinimg.com/736x/c5/61/b2/c561b21330eae62064323e97d2f0c8a1.jpg"); }
+
+/* American */
+.card13 { background-image: url("https://i.pinimg.com/736x/6d/c0/27/6dc02784e3583f9f9d1f6fdb57bf482c.jpg"); }
+.card14 { background-image: url("https://i.pinimg.com/736x/c0/23/e2/c023e26e6d00b5b8d37c7aebb6b4111c.jpg"); }
+.card15 { background-image: url("https://i.pinimg.com/1200x/26/99/12/269912a43432af5c9cf603093bb984c9.jpg"); }
+.card16 { background-image: url("https://i.pinimg.com/1200x/72/01/46/720146e26b0f88079c71acc59310480f.jpg"); }
+.card17 { background-image: url("https://i.pinimg.com/1200x/83/8f/f8/838ff8a6b4261baa871b6708e4ff80b9.jpg"); }
+.card18 { background-image: url("https://i.pinimg.com/1200x/07/b9/20/07b920bd81bd4eb1606f03734c7a7461.jpg"); }
+
+/* Thai */
+.card19 { background-image: url("https://i.pinimg.com/1200x/6a/07/1a/6a071ab6a628d73eb3fb4d3db83be920.jpg"); }
+.card20 { background-image: url("https://i.pinimg.com/736x/66/56/9f/66569fcea00a7afb15a346a6bd98d4c9.jpg"); }
+.card21 { background-image: url("https://i.pinimg.com/736x/05/29/b1/0529b19ea144e00f9ff9275bd8295586.jpg"); }
+.card22 { background-image: url("https://i.pinimg.com/1200x/a7/6a/14/a76a14394baff6b6002cafd5bc6ff82a.jpg"); }
+.card23 { background-image: url("https://i.pinimg.com/1200x/56/6e/b9/566eb9c052b02e7898a2686aaf5b3d82.jpg"); }
+.card24 { background-image: url("https://i.pinimg.com/736x/80/ad/8b/80ad8bfff13645a22463db8ad8f29188.jpg"); }
+
+/* Chinese */
+.card25 { background-image: url("https://i.pinimg.com/1200x/ab/99/7f/ab997f09f39537cbd6e114f51467093a.jpg"); }
+.card26 { background-image: url("https://i.pinimg.com/1200x/fc/19/a2/fc19a211ebf5184eeb8fc33930df20a5.jpg"); }
+.card27 { background-image: url("https://i.pinimg.com/736x/90/da/03/90da0338165b898d0f3ea6fb48b06d6f.jpg"); }
+.card28 { background-image: url("https://i.pinimg.com/736x/1d/96/70/1d96705f50429ef107e990b511f3c165.jpg"); }
+.card29 { background-image: url("https://i.pinimg.com/736x/6c/f1/05/6cf105292cf6d8baedafaf5937bbe42a.jpg"); }
+.card30 { background-image: url("https://i.pinimg.com/736x/6c/f1/05/6cf105292cf6d8baedafaf5937bbe42a.jpg"); }
+
+.back-home-wrapper {
+  display: flex;
+  justify-content: flex-start; 
+  margin-bottom: 20px;
+}
+
+.back-home-btn-symbol {
+  font-size: 30px;
+  cursor: pointer;
+  background: none;
+  margin-left: 70px;
+  margin-top: 20px;
+  border: none;
+  color: #000000;
+  transition: color 0.2s ease;
+}
+

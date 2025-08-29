@@ -1,0 +1,100 @@
+.cuisine-container {
+  width: 94%;         
+  max-width: 1700px;   
+  margin: 25px auto;
+  padding: 18px;     
+  box-sizing: border-box; 
+  margin-top: -20px;
+  text-align:center;
+}
+
+.recipe-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start; 
+  padding: 28px;     
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  gap: 28px;          
+  background-color: #fff;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto 25px;
+  height: auto;  
+}
+
+
+.recipe-image img {
+  width: 100%;        
+  max-width: 420px;    
+  border-radius: 14px;
+
+  justify-content: center;
+}
+
+.recipe-image {
+  max-width: 40%;   
+}
+
+.recipe-info {
+  flex: 1;         
+  min-width: 0;       
+  overflow-wrap: break-word;
+
+  padding-right: 8px;
+  text-align: left;
+  font-size: clamp(1rem, 1.25vw, 1.25rem);
+  line-height: 1.6;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recipe-info ul,
+.recipe-info ol {
+  font-size: clamp(1rem, 1.25vw, 1.25rem);
+  line-height: 1.6;
+  margin-top: 12px;
+  padding-left: 22px;
+}
+
+.recipe-info li {
+  margin-bottom: 12px;
+}
+
+.recipe-info ul, ol li {
+  font-weight: 500;
+}
+
+.buttons {
+  display: flex;
+  justify-content: left;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.buttons button {
+  padding: 12px 24px;
+  cursor: pointer;
+  border: none;
+  background-color: #000;
+  color: white;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+}
+
+.buttons button.active {
+  background-color: #1b7532;
+}
+
+
+.buttons button:hover {
+  background-color: #444;
+}
+
+.buttons button.active {
+  background-color: #1b7532;
+}
